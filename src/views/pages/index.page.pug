@@ -1,0 +1,82 @@
+extends ../layouts/default.layout.pug
+
+block body
+    h1 Home page
+    button click me
+    p(x-text="open")
+    icon(src="chevron-down.svg" width="48" height="48")
+
+    +SlideNavigation('sn_00')
+        +SlideNavigationItem('scene_0')
+            .card
+                .card-body
+                    p Scene 00_00
+                    .btn-group
+                        button.btn.btn-outline-primary(@click="nextScene('scene_1')") next to 00_01
+                        button.btn.btn-outline-primary(@click="nextScene('scene_5')") next to 00_02
+        
+        +SlideNavigationItem('scene_1')
+            .card
+                .card-body
+                    p Scene 00_01
+                    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi esse quos suscipit asperiores, quia officiis? Dolor rerum pariatur totam fugit? Optio, neque eius in dolores consequatur perferendis deleniti. Quidem, repellat.
+                    .btn-group
+                        button.btn.btn-outline-primary(@click="prevScene") prev
+                        button.btn.btn-outline-primary(@click="nextScene('scene_2')") next to 01_00
+                        button.btn.btn-outline-primary(@click="nextScene('scene_3')") next to 01_01
+                        button.btn.btn-outline-primary(@click="nextScene('scene_4')") next to 01_02
+        
+        +SlideNavigationItem('scene_2')
+            .card
+                .card-body
+                    p Scene 01_00
+                    .btn-group
+                        button.btn.btn-outline-primary(@click="prevScene") prev
+
+        +SlideNavigationItem('scene_3')
+            .card
+                .card-body
+                    p Scene 01_01
+                    .btn-group
+                        button.btn.btn-outline-primary(@click="prevScene") prev
+
+        +SlideNavigationItem('scene_4')
+            .card
+                .card-body
+                    p Scene 01_02
+                    .btn-group
+                        button.btn.btn-outline-primary(@click="prevScene") prev
+
+        +SlideNavigationItem('scene_5')
+            .card
+                .card-body
+                    p Scene 00_02
+                    .btn-group
+                        button.btn.btn-outline-primary(@click="prevScene") prev
+
+
+    p.denemeFont Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p.text-yellow-700 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+        a(href="#") Hello world
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatum voluptate illo ex reprehenderit iste perferendis laborum saepe quidem non iusto autem aliquam dolores, fugit asperiores. Asperiores eligendi necessitatibus aperiam.
+    hr
