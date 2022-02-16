@@ -1,63 +1,62 @@
-const del = require('del')
-const browserSync = require('browser-sync')
-const config = require('../config')
+import del from 'del';
+import browserSync from 'browser-sync';
+import config from '../config';
+import { DEST_BASE, BUILD_BASE, DEST_PATHS, BUILD_PATHS } from '../paths';
 
-const clean = async () => {
-    return await del.sync([config.paths.DEST_DIR, config.paths.BUILD_DIR])
-}
+export const cleanFiles = async () => {
+    return await del.sync([DEST_BASE, BUILD_BASE]);
+};
 
-const developmentServer = (done) => {
+export const developmentServer = (done) => {
     browserSync.create().init({
-        server: { baseDir: config.paths.DEST_DIR },
+        server: { baseDir: DEST_BASE },
         files: [
             {
-                match: `${config.paths.DEST_DIRS.fonts}/**/*`,
+                match: `${DEST_PATHS.fonts}/**/*`,
                 fn() {
-                    this.reload()
+                    this.reload();
                 }
             },
             {
-                match: `${config.paths.DEST_DIRS.images}/**/*`,
+                match: `${DEST_PATHS.images}/**/*`,
                 fn() {
-                    this.reload()
+                    this.reload();
                 }
             },
-            `${config.paths.DEST_DIRS.styles}/*.css`,
-            `${config.paths.DEST_DIRS.scripts}/*.js`,
-            `${config.paths.DEST_DIRS.views}/*.html`
+            `${DEST_PATHS.styles}/*.css`,
+            `${DEST_PATHS.javascripts}/*.js`,
+            `${DEST_PATHS.views}/*.html`
         ],
-        port: 4747,
+        port: config.developmentPort,
         open: false
-    })
+    });
 
-    done()
-}
+    done();
+};
 
-const productionServer = (done) => {
+export const productionServer = (done) => {
     browserSync.create().init({
-        server: { baseDir: config.paths.BUILD_DIR },
+        server: { baseDir: BUILD_BASE },
         files: [
             {
-                match: `${config.paths.BUILD_DIRS.fonts}/**/*`,
+                match: `${BUILD_PATHS.fonts}/**/*`,
                 fn() {
-                    this.reload()
+                    this.reload();
                 }
             },
             {
-                match: `${config.paths.BUILD_DIRS.images}/**/*`,
+                match: `${BUILD_PATHS.images}/**/*`,
                 fn() {
-                    this.reload()
+                    this.reload();
                 }
             },
-            `${config.paths.BUILD_DIRS.styles}/*.css`,
-            `${config.paths.BUILD_DIRS.scripts}/*.js`,
-            `${config.paths.BUILD_DIRS.views}/*.html`
+            `${BUILD_PATHS.styles}/*.css`,
+            `${BUILD_PATHS.javascripts}/*.js`,
+            `${BUILD_PATHS.views}/*.html`
         ],
-        port: 3000,
+        port: config.productionPort,
         open: true
-    })
+    });
 
-    done()
-}
-
-module.exports = { clean, developmentServer, productionServer }
+    done();
+};

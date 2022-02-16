@@ -1,37 +1,32 @@
-const SRC_DIR = './src'
-const DEST_DIR = './dist'
-const BUILD_DIR = './build'
+export const ROOT_PATH = '.';
+export const SRC_BASE = `${ROOT_PATH}/src`;
+export const DEST_BASE = `${ROOT_PATH}/dist`;
+export const BUILD_BASE = `${ROOT_PATH}/build`;
 
-const SRC_DIRS = {
-    fonts: `${SRC_DIR}/fonts`,
-    images: `${SRC_DIR}/images`,
-    icons: `${SRC_DIR}/icons`,
-    styles: `${SRC_DIR}/scss`,
-    javascripts: `${SRC_DIR}/js`,
-    views: `${SRC_DIR}/views`
-}
+export const SRC_PATHS = {
+    fonts: `${SRC_BASE}/fonts`,
+    images: `${SRC_BASE}/images`,
+    icons: `${SRC_BASE}/icons`,
+    stylesheetFrameworks: `${SRC_BASE}/stylesheetFrameworks`,
+    stylesheets: `${SRC_BASE}/stylesheets`,
+    javascripts: `${SRC_BASE}/javascripts`,
+    views: `${SRC_BASE}/views`
+};
 
-const DEST_DIRS = {
-    fonts: `${DEST_DIR}/fonts`,
-    images: `${DEST_DIR}/images`,
-    styles: `${DEST_DIR}/css`,
-    javascripts: `${DEST_DIR}/js`,
-    views: DEST_DIR
-}
+export const DEST_PATHS = {
+    fonts: `${DEST_BASE}/fonts`,
+    images: `${DEST_BASE}/images`,
+    stylesheetFrameworks: `${DEST_BASE}/stylesheetFrameworks`,
+    stylesheets: `${DEST_BASE}/stylesheets`,
+    javascripts: `${DEST_BASE}/javascripts`,
+    views: DEST_BASE
+};
 
-const BUILD_DIRS = {
-    fonts: `${BUILD_DIR}/fonts`,
-    images: `${BUILD_DIR}/images`,
-    styles: `${BUILD_DIR}/css`,
-    javascripts: `${BUILD_DIR}/js`,
-    views: BUILD_DIR
-}
-
-module.exports = {
-    SRC_DIR,
-    DEST_DIR,
-    BUILD_DIR,
-    SRC_DIRS,
-    DEST_DIRS,
-    BUILD_DIRS
-}
+export const BUILD_PATHS = {
+    fonts: `${BUILD_BASE}/fonts`,
+    images: `${BUILD_BASE}/images`,
+    stylesheetFrameworks: `${BUILD_BASE}/stylesheetFrameworks`,
+    stylesheets: `${BUILD_BASE}/stylesheets`,
+    javascripts: `${BUILD_BASE}/javascripts`,
+    views: BUILD_BASE
+};

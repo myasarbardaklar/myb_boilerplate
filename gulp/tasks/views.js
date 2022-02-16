@@ -1,34 +1,23 @@
-const gulp = require('gulp')
-const gulpIf = require('gulp-if')
-const plumber = require('gulp-plumber')
-const pug = require('gulp-pug')
-const posthtml = require('gulp-posthtml')
-const ext_replace = require('gulp-ext-replace')
-const config = require('../config')
+import gulp from 'gulp';
+import gulpIf from 'gulp-if';
+import plumber from 'gulp-plumber';
+import pug from 'gulp-pug';
+import posthtml from 'gulp-posthtml';
+import ext_replace from 'gulp-ext-replace';
+import config from '../config';
+import { SRC_PATHS, DEST_PATHS, BUILD_PATHS } from '../paths';
 
-const buildViews = () => {
+export const buildViews = () => {
     return gulp
-        .src(`${config.paths.SRC_DIRS.views}/pages/*.page.pug`)
+        .src(`${SRC_PATHS.views}/pages/*.page.pug`)
         .pipe(plumber())
         .pipe(pug({ pretty: false }))
         .pipe(posthtml())
         .pipe(ext_replace('.html', '.page.html'))
-        .pipe(
-            gulpIf(
-                !config.isProduction,
-                gulp.dest(config.paths.DEST_DIRS.views)
-            )
-        )
-        .pipe(
-            gulpIf(
-                config.isProduction,
-                gulp.dest(config.paths.BUILD_DIRS.views)
-            )
-        )
-}
+        .pipe(gulpIf(!config.isProduction, gulp.dest(DEST_PATHS.views)))
+        .pipe(gulpIf(config.isProduction, gulp.dest(BUILD_PATHS.views)));
+};
 
-const watchViews = () => {
-    return gulp.watch(`${config.paths.SRC_DIRS.views}/**/*.pug`, buildViews)
-}
-
-module.exports = { buildViews, watchViews }
+export const watchViews = () => {
+    return gulp.watch(`${SRC_PATHS.views}/**/*.pug`, buildViews);
+};

@@ -1,5 +1,10 @@
-const mode = require('gulp-mode')()
-const paths = require('./paths')
+import gulpMode from 'gulp-mode';
 
-exports.paths = paths
-exports.isProduction = mode.production()
+const mode = gulpMode();
+
+export default {
+    mode,
+    isProduction: mode.production(),
+    developmentPort: 4747,
+    productionPort: 3000
+};

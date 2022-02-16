@@ -1,12 +1,5 @@
-mixin SVG(first, second)
-  i.w-icon
-    icon(
-      src=`${first}.svg`
-      fill="currentColor"
-    )&attributes(attributes)
-    
+mixin WIcon(first, second)
+    i.w-icon
+        icon(src=`${first}.svg`, fill="currentColor")&attributes(attributes)
     if second
-      icon(
-        src=`${second}.svg`
-        fill="currentColor"
-      )&attributes(attributes)
+        icon(src=`${second}.svg`, fill="currentColor")&attributes(attributes)
