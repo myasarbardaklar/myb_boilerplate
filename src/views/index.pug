@@ -1,10 +1,64 @@
-extends ../layouts/default.layout.pug
+extends ./layouts/default.layout.pug
 
 block body
-    h1.text-3xl.font-bold.underline Home page
-    button click me
+    h1.text-3xl.font-bold.underline.text-white.bg-red-700.p-8.font-sansSerif.shadow-2xl= title
+    a.text-ahmed(href="/about.html") about me
+    button.text-ahmed click me
     p(x-text="open")
     icon(src="chevron-down.svg", width="48", height="48")
+
+    .d-flex.flex-wrap.items-center.p-3.gap-3
+        .bg-dark-50.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-dark-100.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-dark-200.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-dark-300.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-dark-400.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-dark-500.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md.outline-2.outline-dashed.outline-indigo-700
+        .bg-dark.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md.outline-2.outline-dashed.outline-indigo-700
+        .bg-dark-600.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-dark-700.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-dark-800.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-dark-900.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+    
+
+    .d-flex.flex-wrap.items-center.p-3.gap-3
+        .bg-color1-50.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color1-100.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color1-200.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color1-300.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color1-400.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color1-500.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md.outline-2.outline-dashed.outline-indigo-700
+        .bg-color1.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md.outline-2.outline-dashed.outline-indigo-700
+        .bg-color1-600.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color1-700.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color1-800.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color1-900.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+    
+    .d-flex.flex-wrap.items-center.p-3.gap-3
+        .bg-color2-50.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color2-100.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color2-200.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color2-300.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color2-400.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color2-500.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md.outline-2.outline-dashed.outline-indigo-700
+        .bg-color2.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md.outline-2.outline-dashed.outline-indigo-700
+        .bg-color2-600.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color2-700.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color2-800.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color2-900.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+    
+    .d-flex.flex-wrap.items-center.p-3.gap-3
+        .bg-color3-50.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color3-100.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color3-200.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color3-300.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color3-400.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color3-500.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md.outline-2.outline-dashed.outline-indigo-700
+        .bg-color3.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md.outline-2.outline-dashed.outline-indigo-700
+        .bg-color3-600.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color3-700.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color3-800.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
+        .bg-color3-900.shrink-0.inline-flex.w-16.h-16.rounded.shadow-md
 
     .box-view.box-view--black
         .box-view__item.box-view__item--dark-80

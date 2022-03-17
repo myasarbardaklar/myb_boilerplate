@@ -1,9 +1,9 @@
 module.exports = {
-    preset: [
-        'default',
-        {
-            autoprefixer: true,
-            cssDeclarationSorter: true
-        }
-    ]
+  preset: [
+    'default',
+    {
+      autoprefixer: true,
+      cssDeclarationSorter: true
+    }
+  ]
 };
