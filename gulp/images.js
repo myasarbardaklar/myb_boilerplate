@@ -1,33 +1,31 @@
 const gulp = require('gulp');
 const changed = require('gulp-changed');
 const srcset = require('gulp-srcset').default;
-const browserSync = require('browser-sync');
 const { mode } = require('./config/server');
 const paths = require('./config/paths');
-const plugins = require('./config/plugins');
-const { reloadBrowser } = require('./server');
 
-const compileImages = function (cb) {
+const compileImages = function () {
   return gulp
     .src(paths.images.compile.src)
     .pipe(changed(paths.images.compile.developmentDest))
     .pipe(
       srcset(
-        plugins.images.srcset.IPluginRule,
-        plugins.images.srcset.ICommonConfig
+        [
+          {
+            match: '(min-width: 3000px)',
+            width: [1920, 1280, 1024, 860, 540, 320],
+            format: ['jpg', 'webp']
+          }
+        ],
+        { skipOptimization: true }
       )
     )
     .pipe(mode.development(gulp.dest(paths.images.compile.developmentDest)))
-    .pipe(mode.production(gulp.dest(paths.images.compile.productionDest)))
-    .pipe(browserSync.stream())
-    .on('end', cb);
+    .pipe(mode.production(gulp.dest(paths.images.compile.productionDest)));
 };
 
 const watchImages = function () {
-  return gulp.watch(
-    paths.images.watch.src,
-    gulp.series(compileImages, reloadBrowser)
-  );
+  return gulp.watch(paths.images.watch.src, compileImages);
 };
 
 module.exports = { compileImages, watchImages };

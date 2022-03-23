@@ -8,10 +8,6 @@ const {
 const { compileFonts, watchFonts } = require('./gulp/fonts');
 const { compileImages, watchImages } = require('./gulp/images');
 const { compileViews, watchViews } = require('./gulp/views');
-const {
-  compileStylesheetLibs,
-  watchStylesheetLibs
-} = require('./gulp/stylesheetLibs');
 const { compileStylesheets, watchStylesheets } = require('./gulp/stylesheets');
 const { compileJavascripts, watchJavascripts } = require('./gulp/javascripts');
 
@@ -20,11 +16,10 @@ process.env.NODE_ENV = mode.production() ? 'production' : 'development';
 
 const build = gulp.series(
   cleanFiles,
-  gulp.series(
+  gulp.parallel(
     compileFonts,
     compileImages,
     compileViews,
-    compileStylesheetLibs,
     compileStylesheets,
     compileJavascripts
   )
@@ -37,7 +32,6 @@ const dev = gulp.series(
     watchFonts,
     watchImages,
     watchViews,
-    watchStylesheetLibs,
     watchStylesheets,
     watchJavascripts
   )

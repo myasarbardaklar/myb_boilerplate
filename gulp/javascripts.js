@@ -1,31 +1,41 @@
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const sourcemaps = require('gulp-sourcemaps');
-const browserSync = require('browser-sync');
 const { mode } = require('./config/server');
 const paths = require('./config/paths');
-const plugins = require('./config/plugins');
-const { reloadBrowser } = require('./server');
 
-const compileJavascripts = function (cb) {
+const compileJavascripts = function () {
   return gulp
     .src(paths.javascripts.compile.src)
-    .pipe(webpack(plugins.javascripts.webpack))
-    .pipe(mode.development(sourcemaps.init(plugins.javascripts.sourcemaps)))
+    .pipe(
+      webpack({
+        mode: mode.production() ? 'production' : 'development',
+        module: {
+          rules: [
+            {
+              test: /\.m?js$/,
+              exclude: /(node_modules|bower_components)/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: ['@babel/preset-env']
+                }
+              }
+            }
+          ]
+        }
+      })
+    )
+    .pipe(mode.development(sourcemaps.init({ loadMaps: true })))
     .pipe(mode.development(sourcemaps.write()))
     .pipe(
       mode.development(gulp.dest(paths.javascripts.compile.developmentDest))
     )
-    .pipe(mode.production(gulp.dest(paths.javascripts.compile.productionDest)))
-    .pipe(browserSync.stream())
-    .on('end', cb);
+    .pipe(mode.production(gulp.dest(paths.javascripts.compile.productionDest)));
 };
 
 const watchJavascripts = function () {
-  return gulp.watch(
-    paths.javascripts.watch.src,
-    gulp.series(compileJavascripts, reloadBrowser)
-  );
+  return gulp.watch(paths.javascripts.watch.src, compileJavascripts);
 };
 
 module.exports = { compileJavascripts, watchJavascripts };
